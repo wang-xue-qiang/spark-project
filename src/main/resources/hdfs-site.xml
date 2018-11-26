@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+<configuration>
+	<property>
+		<name>dfs.nameservices</name>
+		<value>ns1</value>
+	</property>
+	<property>
+		<name>dfs.ha.namenodes.ns1</name>
+		<value>nn1,nn2</value>
+	</property>
+<!-- ###NameNode RPC ADDRESS### -->
+	<property>
+		<name>dfs.namenode.rpc-address.ns1.nn1</name>
+		<value>bigdata-cdh01.ibeifeng.com:8020</value>
+	</property>
+	<property>
+		<name>dfs.namenode.rpc-address.ns1.nn2</name>
+		<value>bigdata-cdh02.ibeifeng.com:8020</value>
+	</property>
+<!-- ###NameNode HTTP WEB ADDRESS### -->
+	<property>
+		<name>dfs.namenode.http-address.ns1.nn1</name>
+		<value>bigdata-cdh01.ibeifeng.com:50070</value>
+	</property>
+	<property>
+		<name>dfs.namenode.http-address.ns1.nn2</name>
+		<value>bigdata-cdh02.ibeifeng.com:50070</value>
+	</property>
+<!-- ###NameNode SHARED EDITS ADDRESS### -->
+	<property>
+		<name>dfs.namenode.shared.edits.dir</name>
+		<value>qjournal://bigdata-cdh01.ibeifeng.com:8485;bigdata-cdh02.ibeifeng.com:8485;bigdata-cdh03.ibeifeng.com:8485/ns1</value>
+	</property>
+	<property>
+		<name>dfs.journalnode.edits.dir</name>
+		<value>/opt/cdh5.3.6/hadoop-2.5.0-cdh5.3.6/data/dfs/jn</value>
+	</property>
+<!-- ###HDFS PROXY CLIENT### -->	
+	<property>
+		<name>dfs.client.failover.proxy.provider.ns1</name>
+		<value>org.apache.hadoop.hdfs.server.namenode.ha.ConfiguredFailoverProxyProvider</value>
+	</property>	
+<!-- ### NameNodes FENCE ### -->	
+	<property>
+		<name>dfs.ha.fencing.methods</name>
+		<value>sshfence</value>
+	</property>
+	<property>
+		<name>dfs.ha.fencing.ssh.private-key-files</name>
+		<value>/root/.ssh/id_rsa</value>
+	</property>
+<!-- ###  automatic failover ### -->		
+	<property>
+		<name>dfs.ha.automatic-failover.enabled</name>
+		<value>true</value>
+	</property>
+<property>
+    <name>dfs.permissions</name>
+    <value>false</value>
+</property>
+</configuration>

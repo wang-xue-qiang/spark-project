@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+<configuration>
+	<property>
+		<name>hbase.rootdir</name>
+		<value>hdfs://ns1/hbase</value>
+	</property>
+	<property>
+		<name>hbase.cluster.distributed</name>
+		<value>true</value>
+	</property>
+	<property>
+		<name>hbase.zookeeper.quorum</name>
+		<value>bigdata-cdh01.ibeifeng.com,bigdata-cdh02.ibeifeng.com,bigdata-cdh03.ibeifeng.com</value>
+	</property>
+</configuration>
+

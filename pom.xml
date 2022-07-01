@@ -20,7 +20,7 @@
         </repository>
     </repositories>
     <properties>
-        <hadoop.version>2.5.0</hadoop.version>
+        <hadoop.version>2.7.0</hadoop.version>
         <spark.version>1.5.1</spark.version>
         <mysql.version>5.1.6</mysql.version>
     </properties>
